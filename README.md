@@ -261,7 +261,7 @@ docker image inspect alpine
 docker image inspect --format='{{.Id}} -> {{.Parent}}' alpine
 ```
 
-- Сценарий "Как внести изменения в образ и закоммитить?"
+- Сценарий "Как вручную внести изменения в образ и закоммитить?"
 ```shell
 docker container run --name demo -it alpine
 /# touch side-effect.txt
@@ -271,7 +271,7 @@ docker container commit demo {{ registry-account }}/demo
 docker image ls
 ```
 
-- Сценарий "Как присвоить новый тег (версию) образу?"
+- Сценарий "Как добавить новое символьное имя (версию) образу?"
 ```shell
 docker image tag {{ registry-account }}/demo:latest {{ registry-account }}/demo:1.0.0
 docker image ls
@@ -282,7 +282,7 @@ docker image ls
 docker image push {{ registry-account }}/demo:1.0.0
 ```
 
-- Сценарий "Как удалять точечно образы?"
+- Сценарий "Как удалять точечно образы или полностью все неиспользуемые или те, у которых нет символьного имени?"
 ```shell
 docker image ls
 docker container rm demo
